@@ -1,5 +1,6 @@
 // Gerekli bileşenleri içe aktar
 import Header from "./Header"; // Sayfa başlığı bileşeni
+import benFoto from "../imgs/ben.jpg";
 
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
 function About() {
@@ -14,7 +15,7 @@ function About() {
         Ben yaptim
       </p>
 
-      <img src="../imgs/ben.jpg" alt="literaly ben"></img>
+      <img src={benFoto} alt="literaly ben"></img>
     </div>
   );
 }
