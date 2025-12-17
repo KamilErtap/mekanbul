@@ -49,7 +49,7 @@ function AddComment() {
           // Yorum başarıyla eklendiyse Redux state'i güncelle
           dispatch({ type:  "ADD_COMMENT_SUCCESS"});
           // Mekan detay sayfasına yönlendir
-          navigate(`/venue/${id}`);
+          setShowModal(true);
         }).catch((e) => {
           dispatch({ type: "ADD_COMMENT_FAILURE"})
         });
