@@ -23,7 +23,7 @@ function AddComment() {
   // Sayfa yönlendirme işlemleri için kullanılır
   const navigate = useNavigate();
 
-  //const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
 
   const handleModalClose = () => {
@@ -45,7 +45,7 @@ function AddComment() {
           text: evt.target.elements.text.value, // Yorum metni
           rating: evt.target.elements.rating.value // Yorum puanı
         }
-        VenueDataService.AddComment(id, newComment).then((response) => {
+        VenueDataService.addComment(id, newComment).then((response) => {
           // Yorum başarıyla eklendiyse Redux state'i güncelle
           dispatch({ type:  "ADD_COMMENT_SUCCESS"});
           // Mekan detay sayfasına yönlendir
@@ -115,7 +115,7 @@ function AddComment() {
             </div>
             
             {/* Form gönderme butonu */}
-            <button className="btn btn-default pull-right">Yorum Ekle</button>
+            <button type="submit" className="btn btn-default pull-right">Yorum Ekle</button>
           </form>
         </div>
        
