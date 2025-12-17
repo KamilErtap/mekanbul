@@ -115,7 +115,7 @@ function AddComment() {
             </div>
             
             {/* Form gönderme butonu */}
-            <button type="submit" className="btn btn-default pull-right">Yorum Ekle</button>
+            <button onClick={() => setShowModal(true)} type="submit" className="btn btn-default pull-right">Yorum Ekle</button>
           </form>
         </div>
        
