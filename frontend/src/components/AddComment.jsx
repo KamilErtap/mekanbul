@@ -4,6 +4,10 @@ import React from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom"; // Router hook'ları
 import VenueDataService from "../services/VenueDataService"; // API servisi
 import { useDispatch } from "react-redux"; // Redux state yönetimi
+import { useState } from "react";
+import Modal from "./Modal"; // path projene göre değişebilir
+
+
 
 // Yorum ekleme sayfası bileşeni
 function AddComment() {
@@ -19,9 +23,12 @@ function AddComment() {
   // Sayfa yönlendirme işlemleri için kullanılır
   const navigate = useNavigate();
 
+  const [showModal, setShowModal] = useState(false);
+
+
   const handleModalClose = () => {
     setShowModal(false);
-    navigate('/venue/${id}');
+    navigate(`/venue/${id}`);
   };
   
   // Form gönderildiğinde çalışan fonksiyon
@@ -42,7 +49,7 @@ function AddComment() {
           // Yorum başarıyla eklendiyse Redux state'i güncelle
           dispatch({ type:  "ADD_COMMENT_SUCCESS"});
           // Mekan detay sayfasına yönlendir
-          navigate('/venue/${id}');
+          navigate(`/venue/${id}`);
         }).catch((e) => {
           dispatch({ type: "ADD_COMMENT_FAILURE"})
         });
