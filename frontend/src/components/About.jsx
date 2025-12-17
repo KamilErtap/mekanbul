@@ -15,7 +15,7 @@ function About() {
         Ben yaptim
       </p>
 
-      <img src={benFoto} width={200} height={200}></img>
+      <img src={benFoto} width={200} height={200} alt="literly me"></img>
     </div>
   );
 }
