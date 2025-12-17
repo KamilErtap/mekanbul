@@ -45,7 +45,7 @@ function AddComment() {
           text: evt.target.elements.text.value, // Yorum metni
           rating: evt.target.elements.rating.value // Yorum puanı
         }
-        VenueDataService.addVenue(id, newComment).then((response) => {
+        VenueDataService.AddComment(id, newComment).then((response) => {
           // Yorum başarıyla eklendiyse Redux state'i güncelle
           dispatch({ type:  "ADD_COMMENT_SUCCESS"});
           // Mekan detay sayfasına yönlendir
