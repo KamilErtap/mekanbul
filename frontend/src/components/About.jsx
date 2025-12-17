@@ -10,6 +10,9 @@ function About() {
         headerText="Mekanbul"
         motto="ReactJS Single Page Application (SPA)"
       />
+      <p>
+        Ben yaptim
+      </p>
     </div>
   );
 }
