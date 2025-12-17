@@ -23,7 +23,7 @@ function AddComment() {
   // Sayfa yönlendirme işlemleri için kullanılır
   const navigate = useNavigate();
 
-  const [showModal, setShowModal] = useState(false);
+  //const [showModal, setShowModal] = useState(false);
 
 
   const handleModalClose = () => {
