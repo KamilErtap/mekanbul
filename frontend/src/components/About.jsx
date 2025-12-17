@@ -13,6 +13,8 @@ function About() {
       <p>
         Ben yaptim
       </p>
+
+      <img src="../imgs/ben.jpg" alt="literaly ben"></img>
     </div>
   );
 }
