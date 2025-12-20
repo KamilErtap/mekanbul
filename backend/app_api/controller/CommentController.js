@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Venue = mongoose.model("venue");
+var User = mongoose.model("user");
 
 const createResponse = function (res, status, content) {
     res.status(status).json(content);
@@ -43,9 +44,9 @@ var createComment = function (req, res, incomingVenue, author) {
         });
 
         incomingVenue.save().then(function(venue){
-            var comments = venue.comments;
-            var comment = comments[comments.length-1];
-            updateRating(venue._id, false);
+            var comment;
+            updateRating(venue._id);
+            comment = venue.comments[venue.comments.length - 1];    
             createResponse(res, "201", comment);
         });
     } catch (error) {
@@ -56,10 +57,11 @@ var createComment = function (req, res, incomingVenue, author) {
 const getUser = async (req, res, callback) => {
     if (req.auth && req.auth.email) {
         try {
-            await User.findOne({email: req.auth.email}).then(function(user){
+            await User.findOne({ email: req.auth.email }).then(function(user){
                 callback(req, res, user.name);
             });
         } catch (error) {
+            console.log(error);
             createResponse(res, 400, {status: "Kullanici bulunamadi"});
         }
     } else {
@@ -78,6 +80,7 @@ const addComment = async function (req, res) {
             });
         });
     } catch (error) {
+        createResponse(res, 400, );
         createResponse(res, 400, {status: "Yorum ekleme basarisiz"});
     };
     //createResponse(res, 200, { status: "başarılı" });

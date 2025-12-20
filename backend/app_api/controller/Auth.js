@@ -23,7 +23,7 @@ const signUp = async function (req, res) {
 };
 const login = async function (req, res) {
     if (!req.body.email || !req.body.password) {
-        createResponse(res, 400, {status: "Tü alanlar gerekli!"});
+        createResponse(res, 400, {status: "Tüm alanlar gerekli!"});
     }
     passport.authenticate("local", (currentUser) => {
         if (currentUser) {
