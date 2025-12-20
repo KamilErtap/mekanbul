@@ -16,8 +16,13 @@ function Admin() {
         id = "e-mail"
         label= "E-posta: "
         type= "text"
-        isFocused
-        
+        isFocused        
+      />
+      <InputWithLabel
+        id = "password"
+        label= "Şifre: "
+        type= "password"
+        isFocused        
       />
     </div>
   );
