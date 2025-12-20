@@ -1,12 +1,16 @@
 function Admin() {
   return (
     <div>
-      <InputWithLabel
-        id="email"
-        label="E-Posta:"
-        type="text"
-        isFocused
-      />
+        <Header
+            headerText="Admin Sayfası"
+            motto="Yönetim Paneli"
+        />
+        <InputWithLabel
+            id="email"
+            label="E-Posta:"
+            type="text"
+            isFocused
+        />
     </div>
   );
 }
