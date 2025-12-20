@@ -3,13 +3,13 @@ import Header from "./Header"; // Sayfa başlığı bileşeni
 import InputWithLabel from "./InputWithLabel";
 
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
-function Admin() {
+function Login() {
   return (
     <div>
       {/* Sayfa başlığı ve slogan */}
       <Header
-        headerText="Admin Paneli"
-        motto="Yönetim işlemlerinizi buradan yapabilirsiniz"
+        headerText="Log Paneli"
+        motto="Giriş işlemlerinizi buradan yapabilirsiniz"
       />
       {/* Admin sayfası içeriği */}
       <InputWithLabel
@@ -30,4 +30,4 @@ function Admin() {
 }
 
 // Bileşeni dışa aktar
-export default Admin;
+export default Login;
