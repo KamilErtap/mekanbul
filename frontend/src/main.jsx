@@ -59,6 +59,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Hakkında sayfası - "/about" yolu */}
           <Route path="about" element={<About />} />
 
+          {/* Admin sayfası - "/admin" yolu */}
           <Route path="admin" element={<Admin />} />
           
           {/* Bulunamayan tüm sayfalar için 404 */}
