@@ -20,7 +20,7 @@ var allowCrossDomain = function(req,res,next){
     next();
 };
 app.use((err, req, res, next) => {
-    if (err.name == "UnauthorizatedError")
+    if (err.name == "UnauthorizedError")
         res.status(401).json({status: "Dogrulama tokeni bulunamadi!"});
 });
 app.use(express.json());
