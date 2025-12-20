@@ -1,7 +1,12 @@
 var express= require('express');
 var router=express.Router();
 var venueController=require("../controller/VenueController");
-var commentController=require("../controller/CommentController");
+var commentController=require("../controller/CommentController");7
+
+const ctrlAuth = require('../controller/Auth');
+router.post(`/signup`, ctrlAuth.signUp);
+router.post(`/login`, ctrlAuth.login);
+
 router
 .route("/venues")
 .get(venueController.listVenues)
