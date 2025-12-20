@@ -1,0 +1,24 @@
+// Gerekli bileşenleri içe aktar
+import Header from "./Header"; // Sayfa başlığı bileşeni
+import benFoto from "../imgs/ben.jpg";
+
+// Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
+function Admin() {
+  return (
+    <div>
+      {/* Sayfa başlığı ve slogan */}
+      <Header
+        headerText="Mekanbul"
+        motto="ReactJS Single Page Application (SPA)"
+      />
+      <p>
+        Ben yaptim
+      </p>
+
+      <img src={benFoto} width={200} height={200} alt="literly me"></img>
+    </div>
+  );
+}
+
+// Bileşeni dışa aktar
+export default Admin;
