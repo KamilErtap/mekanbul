@@ -13,6 +13,7 @@ import Home from "./components/Home"; // Ana sayfa
 import VenueDetail from "./components/VenueDetail"; // Mekan detay sayfası
 import AddComment from "./components/AddComment"; // Yorum ekleme sayfası
 import About from "./components/About"; // Hakkında sayfası
+import Admin from "./components/Admin"; // Admin sayfası
 import PageNotFound from "./components/PageNotFound"; // 404 sayfa bulunamadı
 
 
