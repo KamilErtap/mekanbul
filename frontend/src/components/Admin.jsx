@@ -24,6 +24,7 @@ function Admin() {
         type= "password"
         isFocused        
       />
+      <button>Giriş Yap</button> <button>Kayıt Ol</button>
     </div>
   );
 }
