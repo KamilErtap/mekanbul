@@ -1,6 +1,5 @@
 const passport = require("passport");
 const mongoose = require("mongoose");
-const { sign } = require("jsonwebtoken");
 const User = mongoose.model("user");
 const createResponse = function (res, status, content) {
     res.status(status).json(content);
