@@ -2,7 +2,7 @@ function Admin() {
   return (
     <div>
         <Header
-            headerText="Admin Sayfası"
+            headerText="Admin Sayfasi"
             motto="Yönetim Paneli"
         />
         <InputWithLabel
