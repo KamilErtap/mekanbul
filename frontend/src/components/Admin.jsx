@@ -1,6 +1,6 @@
 // Gerekli bileşenleri içe aktar
 import Header from "./Header"; // Sayfa başlığı bileşeni
-import benFoto from "../imgs/ben.jpg";
+import InputWithLabel from "./InputWithLabel";
 
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
 function Admin() {
@@ -8,14 +8,17 @@ function Admin() {
     <div>
       {/* Sayfa başlığı ve slogan */}
       <Header
-        headerText="Mekanbul"
-        motto="ReactJS Single Page Application (SPA)"
+        headerText="Admin Paneli"
+        motto="Yönetim işlemlerinizi buradan yapabilirsiniz"
       />
-      <p>
-        Ben yaptim
-      </p>
-
-      <img src={benFoto} width={200} height={200} alt="literly me"></img>
+      {/* Admin sayfası içeriği */}
+      <InputWithLabel
+        id = "e-mail"
+        label= "E-posta: "
+        type= "text"
+        isFocused
+        
+      />
     </div>
   );
 }
