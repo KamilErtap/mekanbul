@@ -19,7 +19,10 @@ var allowCrossDomain = function(req,res,next){
     res.header('Access-Control-Allow-Hearders','Content-Type, Authorization');
     next();
 };
-
+app.use((err, req, res, next) => {
+    if (err.name == "UnauthorizatedError")
+        res.status(401).json({status: "Dogrulama tokeni bulunamadi!"});
+});
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(allowCrossDomain);
