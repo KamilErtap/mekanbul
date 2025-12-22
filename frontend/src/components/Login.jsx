@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserDataService from "../services/UserDataService"; // Axios service
+import {jwtDecode} from "jwt-decode";
 
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("");
     const navigate = useNavigate();
 
     const handleLogin = async () => {
@@ -20,14 +20,13 @@ function Login() {
     
             try {
                 const response = await UserDataService.login({ email, password });
-                const user = response.data.user;
-                role = user?.role;
-                setRole(role);
+                const token = response.data.token;
+                const user = jwtDecode(token);
                 // Token localStorage’a kaydedilebilir
-                localStorage.setItem("token", response.data.token);
+                localStorage.setItem("token", token);
                 alert("Giriş başarılı!");
-                console.log("Giriş yapan kullanıcı:", role);
-                if (user?.role === "admin") {
+                console.log("Giriş yapan kullanıcı:", user.role);
+                if (user.role === "admin") {
                     navigate("/admin"); // Admin paneline yönlendir
                 }else { 
                 navigate("/");
