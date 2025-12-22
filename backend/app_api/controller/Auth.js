@@ -6,7 +6,7 @@ const createResponse = function (res, status, content) {
 };
 const signUp = async function (req, res) {
     if (!req.body.name || !req.body.email || !req.body.password) {
-        return createResponse(res, 400, {status: "Tüm alanlar gerekli!"} );
+        createResponse(res, 400, {status: "Tüm alanlar gerekli!"} );
     }
     const user = new User();
     user.name = req.body.name;
@@ -15,10 +15,10 @@ const signUp = async function (req, res) {
     try {
         await user.save().then((newUser) => {
             let generatedToken = newUser.generateToken();
-            return createResponse(res, 200, {token: generatedToken});
+            createResponse(res, 200, {token: generatedToken});
         });
     } catch (error) {
-        return createResponse(res, 400, {status:"Kayit basarisiz!"});
+        createResponse(res, 400, {status:"Kayit basarisiz!"});
     }
 };
 const login = async function (req, res) {

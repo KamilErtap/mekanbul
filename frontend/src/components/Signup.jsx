@@ -36,20 +36,23 @@ function Signup() {
       <InputWithLabel
         label="Kullanıcı Adı"
         type="text"
+        defaultValue="kamil"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
       <InputWithLabel
         label="Email"
-        type="email"
+        type="text"
+        defaultValue="kamil"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
       <InputWithLabel
         label="Şifre"
-        type="password"
+        type="text"
+        defaultValue="kamil"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
