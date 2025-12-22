@@ -3,8 +3,6 @@ import { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
 import UserDataService from "../services/UserDataService";
-import axios from "axios";
-import { signUp } from "../../../backend/app_api/controller/Auth";
 
 function Signup() {
   const navigate = useNavigate();
@@ -16,12 +14,8 @@ function Signup() {
   const handleSignup = async () => {
 
     try {
-        const formData = new URLSearchParams();
-        formData.append("name", name);
-        formData.append("email", email);
-        formData.append("password", password);
-
-        signUp(formData);
+        
+        await UserDataService.signup({ name, email, password });
 
         alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
         navigate("/login");
