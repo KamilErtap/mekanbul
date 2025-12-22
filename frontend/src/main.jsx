@@ -13,8 +13,8 @@ import Home from "./components/Home"; // Ana sayfa
 import VenueDetail from "./components/VenueDetail"; // Mekan detay sayfası
 import AddComment from "./components/AddComment"; // Yorum ekleme sayfası
 import About from "./components/About"; // Hakkında sayfası
-import Log from "./components/Log.jsx"; // Admin sayfası
 import PageNotFound from "./components/PageNotFound"; // 404 sayfa bulunamadı
+import User from "./components/User"; // Giriş/Kayıt sayfası
 
 
 // React Router bileşenlerini içe aktar (sayfa yönlendirme için)
@@ -59,8 +59,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Hakkında sayfası - "/about" yolu */}
           <Route path="about" element={<About />} />
 
-          {/* Login sayfası - "/login" yolu */}
-          <Route path="log" element={<Log />} />
+          {/* Giriş/Kayıt sayfası - "/user" yolu */}
+          <Route path="user" element={<User />} />
           
           {/* Bulunamayan tüm sayfalar için 404 */}
           <Route path="*" element={<PageNotFound />} />
