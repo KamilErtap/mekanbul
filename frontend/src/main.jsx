@@ -69,7 +69,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
           <Route path="login" element={<Login />} />
 
-          <Route path="Admin" element={<Admin />} />
+          <Route path="admin" element={<Admin />} />
           
           {/* Bulunamayan tüm sayfalar için 404 */}
           <Route path="*" element={<PageNotFound />} />
