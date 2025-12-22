@@ -7,5 +7,9 @@ class UserDataService {
    
     return http.post("/signup", data);
   }
+
+  login(data) {
+    return http.post("/login", data);
+  }
 }
   export default new UserDataService();
