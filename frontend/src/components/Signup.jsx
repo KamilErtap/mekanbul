@@ -18,7 +18,7 @@ function Signup() {
         await UserDataService.signup({ name, email, password });
 
         alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
-        navigate("/login");
+    
     } catch (error) {
         alert("Kayıt başarısız! Lütfen bilgilerinizi kontrol edin.");
     }
