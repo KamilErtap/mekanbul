@@ -15,6 +15,9 @@ import AddComment from "./components/AddComment"; // Yorum ekleme sayfası
 import About from "./components/About"; // Hakkında sayfası
 import PageNotFound from "./components/PageNotFound"; // 404 sayfa bulunamadı
 import User from "./components/User"; // Giriş/Kayıt sayfası
+import Signup from "./components/Signup"; // Kayıt sayfası
+import Login from "./components/Login";
+import Admin from "./components/Admin"; // Admin paneli
 
 
 // React Router bileşenlerini içe aktar (sayfa yönlendirme için)
@@ -61,6 +64,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
           {/* Giriş/Kayıt sayfası - "/user" yolu */}
           <Route path="user" element={<User />} />
+
+          <Route path="signup" element={<Signup />} />
+
+          <Route path="login" element={<Login />} />
+
+          <Route path="Admin" element={<Admin />} />
           
           {/* Bulunamayan tüm sayfalar için 404 */}
           <Route path="*" element={<PageNotFound />} />
