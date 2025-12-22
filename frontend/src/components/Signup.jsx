@@ -24,7 +24,7 @@ function Signup() {
       
       alert("Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
     } catch (error) {
-      alert("Kayıt işlemi başarısız oldu", error.message);
+      alert(error.message);
     }
   };
 
