@@ -4,6 +4,7 @@ import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
 import UserDataService from "../services/UserDataService";
 import axios from "axios";
+import { signUp } from "../../../backend/app_api/controller/Auth";
 
 function Signup() {
   const navigate = useNavigate();
@@ -12,9 +13,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async (e) => {
-
-    e.preventDefault();
+  const handleSignup = async () => {
 
     try {
         const formData = new URLSearchParams();
@@ -22,13 +21,8 @@ function Signup() {
         formData.append("email", email);
         formData.append("password", password);
 
-        const response = await axios.post("https://mekanbul-beryl.vercel.app/api/signup",
-            formData,{
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-            }
-        );           
+        signUp(formData);
+
         alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
         navigate("/login");
     } catch (error) {
