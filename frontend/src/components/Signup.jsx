@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
 import UserDataService from "../services/UserDataService"; // Axios service
+import qs from "qs";
 
 function Signup() {
     const [name, setName] = useState("");
@@ -17,7 +18,7 @@ function Signup() {
         }
 
         try {
-            const response = await UserDataService.signup({ name, email, password });
+            const response = await UserDataService.signup(qs.stringify({ name, email, password }));
             // Token localStorage’a kaydedilebilir
             localStorage.setItem("token", response.data.token);
             alert("Kayıt başarılı!");
