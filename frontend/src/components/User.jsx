@@ -8,7 +8,7 @@ function User() {
     <div>
         <Header />
       <div >
-        <button onClick={() => nav('/login')}>Giriş Yap</button> <button onClick={() => nav('/register')}   >Kayıt Ol</button>
+        <button onClick={() => nav('/login')}>Giriş Yap</button> <button onClick={() => nav('/register')}>Kayıt Ol</button>
       </div>
     </div>
   );
