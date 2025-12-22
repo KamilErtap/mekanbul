@@ -24,11 +24,11 @@ app.use((err, req, res, next) => {
         res.status(401).json({status: "Dogrulama tokeni bulunamadi!"});
 });
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(allowCrossDomain);
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/api", apiRoute);
