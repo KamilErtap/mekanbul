@@ -3,6 +3,7 @@ import { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
 import UserDataService from "../services/UserDataService";
+import axios from "axios";
 
 function Signup() {
   const navigate = useNavigate();
@@ -11,20 +12,27 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async () => {
+  const handleSignup = async (e) => {
+
+    e.preventDefault();
+
     try {
-      const response = await UserDataService.signup({
-        name,
-        email,
-        password
-      });
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      navigate("/login");
-      
-      alert("Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+        const formData = new URLSearchParams();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("password", password);
+
+        const response = await axios.post("https://mekanbul-beryl.vercel.app/api/signup",
+            formData,{
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+            }
+        );           
+        alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+        navigate("/login");
     } catch (error) {
-      alert(error.message);
+        alert("Kayıt başarısız! Lütfen bilgilerinizi kontrol edin.");
     }
   };
 
@@ -36,7 +44,6 @@ function Signup() {
       <InputWithLabel
         label="Kullanıcı Adı"
         type="text"
-        defaultValue="kamil"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
@@ -44,7 +51,6 @@ function Signup() {
       <InputWithLabel
         label="Email"
         type="text"
-        defaultValue="kamil"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -52,7 +58,6 @@ function Signup() {
       <InputWithLabel
         label="Şifre"
         type="text"
-        defaultValue="kamil"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
