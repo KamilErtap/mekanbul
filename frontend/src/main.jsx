@@ -13,7 +13,7 @@ import Home from "./components/Home"; // Ana sayfa
 import VenueDetail from "./components/VenueDetail"; // Mekan detay sayfası
 import AddComment from "./components/AddComment"; // Yorum ekleme sayfası
 import About from "./components/About"; // Hakkında sayfası
-import Login from "./components/Login.jsx"; // Admin sayfası
+import Log from "./components/Log.jsx"; // Admin sayfası
 import PageNotFound from "./components/PageNotFound"; // 404 sayfa bulunamadı
 
 
@@ -60,7 +60,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="about" element={<About />} />
 
           {/* Login sayfası - "/login" yolu */}
-          <Route path="login" element={<Login />} />
+          <Route path="log" element={<Log />} />
           
           {/* Bulunamayan tüm sayfalar için 404 */}
           <Route path="*" element={<PageNotFound />} />

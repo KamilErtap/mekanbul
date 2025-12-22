@@ -34,7 +34,7 @@ function NavBar() {
             </li>
             {/* Login sayfası linki */}
             <li>
-              <NavLink to={"login"}>Login</NavLink> 
+              <NavLink to={"log"}>Log</NavLink> 
             </li>
           </ul>
         </div>

@@ -3,7 +3,7 @@ import Header from "./Header"; // Sayfa başlığı bileşeni
 import InputWithLabel from "./InputWithLabel";
 
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
-function Login() {
+function Log() {
   return (
     <div>
       {/* Sayfa başlığı ve slogan */}
@@ -30,4 +30,4 @@ function Login() {
 }
 
 // Bileşeni dışa aktar
-export default Login;
+export default Log;
