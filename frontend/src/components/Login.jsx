@@ -24,8 +24,9 @@ function Login() {
                 alert("Giriş başarılı!");
                 if (response.data.user.role === "admin") {
                     navigate("/admin"); // Admin paneline yönlendir
-                }
-                navigate("/"); // Ana sayfaya yönlendir
+                }else { 
+                navigate("/");
+                } // Ana sayfaya yönlendir
             } catch (err) {
                 console.error(err);
                 alert(err.response?.data?.status || "Giriş başarısız!");
