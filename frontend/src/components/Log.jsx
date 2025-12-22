@@ -2,18 +2,17 @@
 import Header from "./Header"; // Sayfa başlığı bileşeni
 import InputWithLabel from "./InputWithLabel";
 import axios from "axios"; // HTTP istekleri için axios kütüphanesi
+import { useState } from "react";
 
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
 function Log() {
 
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignup = async () => {
     try {
         const response = await axios.post("https://mekanbul-beryl.vercel.app/api/signup", {
-          name,
           email,
           password
         });
