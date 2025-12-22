@@ -23,7 +23,6 @@ function Signup() {
     } catch (error) {
       console.error(error);
       alert("Kayıt işlemi başarısız oldu");
-      response.status(400).json({ status: "Kayıt başarısız!" });
     }
   };
 
