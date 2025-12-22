@@ -21,7 +21,7 @@ function Signup() {
             // Token localStorage’a kaydedilebilir
             localStorage.setItem("token", response.data.token);
             alert("Kayıt başarılı!");
-            navigate("/"); // Ana sayfaya yönlendir
+            navigate("/login"); // Ana sayfaya yönlendir
         } catch (err) {
             console.error(err);
             alert(err.response?.data?.status || "Kayıt başarısız!");
@@ -32,15 +32,10 @@ function Signup() {
         <div>
             <Header />
             <h1>Kayıt Ol</h1>
-
-            
+           
             <input type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
             <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-
-            
-
-            
+            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />          
 
             <button onClick={handleSignup}>Kayıt Ol</button>
 
