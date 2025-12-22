@@ -24,7 +24,7 @@ app.use((err, req, res, next) => {
         res.status(401).json({status: "Dogrulama tokeni bulunamadi!"});
 });
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 app.use(allowCrossDomain);
 app.use(logger('dev'));
 //app.use(express.json());
