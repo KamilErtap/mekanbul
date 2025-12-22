@@ -23,6 +23,7 @@ function Login() {
                 // Token localStorage’a kaydedilebilir
                 localStorage.setItem("token", response.data.token);
                 alert("Giriş başarılı!");
+                console.log("Giriş yapan kullanıcı:", user.role);
                 if (user?.role === "admin") {
                     navigate("/admin"); // Admin paneline yönlendir
                 }else { 
