@@ -1,8 +1,8 @@
 import Header from "./Header"; // Sayfa başlığı bileşeni
-import {usenavigate} from 'react-router-dom'; // Yönlendirme için
+import {useNavigate} from 'react-router-dom'; // Yönlendirme için
 
 function User() {
-    const nav = usenavigate();
+    const nav = useNavigate();
     
   return (
     <div>
