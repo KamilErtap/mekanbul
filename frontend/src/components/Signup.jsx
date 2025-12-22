@@ -13,12 +13,15 @@ function Signup() {
 
   const handleSignup = async () => {
     try {
-      await UserDataService.signup(
+      const response = await UserDataService.signup({
         name,
         email,
         password
-      );
-        alert("Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+      });
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      navigate("/login");
+      alert("Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
     } catch (error) {
       console.error(error);
       alert("Kayıt işlemi başarısız oldu");
