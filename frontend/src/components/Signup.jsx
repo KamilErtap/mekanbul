@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
-import axios from "axios";
+import api from "../api/http-common";
 
 function Signup() {
   const navigate = useNavigate();
@@ -13,12 +13,16 @@ function Signup() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post(
-        "https://mekanbul-beryl.vercel.app/api/signup",
+      const response = await api.post("/signup",
         {
           name,
           email,
           password,
+        },
+        {
+            headers: {
+                "Content-Type": "application/json",
+            }
         }
       );
 
