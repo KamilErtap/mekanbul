@@ -9,6 +9,7 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("");
     const navigate = useNavigate();
 
     const handleLogin = async () => {
@@ -20,10 +21,12 @@ function Login() {
             try {
                 const response = await UserDataService.login({ email, password });
                 const user = response.data.user;
+                role = user?.role;
+                setRole(role);
                 // Token localStorage’a kaydedilebilir
                 localStorage.setItem("token", response.data.token);
                 alert("Giriş başarılı!");
-                console.log("Giriş yapan kullanıcı:", user.role);
+                console.log("Giriş yapan kullanıcı:", role);
                 if (user?.role === "admin") {
                     navigate("/admin"); // Admin paneline yönlendir
                 }else { 
