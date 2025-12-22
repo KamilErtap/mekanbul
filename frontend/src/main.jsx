@@ -14,7 +14,6 @@ import VenueDetail from "./components/VenueDetail"; // Mekan detay sayfası
 import AddComment from "./components/AddComment"; // Yorum ekleme sayfası
 import About from "./components/About"; // Hakkında sayfası
 import PageNotFound from "./components/PageNotFound"; // 404 sayfa bulunamadı
-import User from "./components/User"; // Giriş/Kayıt sayfası
 import Signup from "./components/Signup"; // Kayıt sayfası
 import Login from "./components/Login";
 import Admin from "./components/Admin"; // Admin paneli
@@ -61,9 +60,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           
           {/* Hakkında sayfası - "/about" yolu */}
           <Route path="about" element={<About />} />
-
-          {/* Giriş/Kayıt sayfası - "/user" yolu */}
-          <Route path="user" element={<User />} />
 
           <Route path="signup" element={<Signup />} />
 

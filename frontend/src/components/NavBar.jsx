@@ -34,7 +34,7 @@ function NavBar() {
             </li>
             {/* Giriş/Kayıt sayfası linki */} 
             <li>
-              <NavLink to={"user"}>Giriş/Kayıt</NavLink> 
+              <NavLink to={"signup"}>Giriş/Kayıt</NavLink> 
             </li>
           </ul>
         </div>
