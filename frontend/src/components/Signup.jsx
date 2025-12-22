@@ -21,9 +21,11 @@ function Signup() {
       const token = response.data.token;
       localStorage.setItem("token", token);
       navigate("/login");
+      
       alert("Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
     } catch (error) {
       console.error(error);
+      console.log("Kayıt işlemi sırasında hata oluştu:", error);
       alert("Kayıt işlemi başarısız oldu");
     }
   };
