@@ -18,12 +18,12 @@ function Signup() {
         email,
         password
       );
-
-      localStorage.setItem("token", response.data.token);
+      
       navigate("/");
     } catch (error) {
       console.error(error);
       alert("Kayıt işlemi başarısız oldu");
+      response.status(400).json({ status: "Kayıt başarısız!" });
     }
   };
 
