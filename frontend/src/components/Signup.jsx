@@ -23,7 +23,8 @@ function Signup() {
             localStorage.setItem("token", token);
             navigate("/");
         } catch (error) {
-            
+            console.error("Kayıt işlemi başarısız:", error);
+            alert("Kayıt işlemi başarısız oldu. Lütfen tekrar deneyin.");
         }
         
     }
