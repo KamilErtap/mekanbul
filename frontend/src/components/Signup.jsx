@@ -14,7 +14,7 @@ function Signup() {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        "https://mekanbul-azya.vercel.app/api/signup",
+        "https://mekanbul-beryl.vercel.app/api/signup",
         {
           name,
           email,
