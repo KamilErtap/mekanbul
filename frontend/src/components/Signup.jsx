@@ -24,9 +24,7 @@ function Signup() {
       
       alert("Kayıt işlemi başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
     } catch (error) {
-      console.error(error);
-      console.log("Kayıt işlemi sırasında hata oluştu:", error);
-      alert("Kayıt işlemi başarısız oldu");
+      alert("Kayıt işlemi başarısız oldu", error.message);
     }
   };
 
