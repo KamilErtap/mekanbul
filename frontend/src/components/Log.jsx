@@ -6,15 +6,18 @@ import axios from "axios"; // HTTP istekleri için axios kütüphanesi
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
 function Log() {
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignup = async () => {
     try {
         const response = await axios.post("https://mekanbul-beryl.vercel.app/api/signup", {
-          email: email,
-          password: password
+          name,
+          email,
+          password
         });
+        localStorage.setItem("token", response.data.token);
     } catch (error) {
       
     }
@@ -23,9 +26,10 @@ function Log() {
   const handleLogin = async () => {
     try {
         const response = await axios.post("https://mekanbul-beryl.vercel.app/api/login", {
-          email: email,
-          password: password
+          email,
+          password
         });
+        localStorage.setItem("token", response.data.token);
     } catch (error) {
       
     }
@@ -39,7 +43,7 @@ function Log() {
         motto="Giriş işlemlerinizi buradan yapabilirsiniz"
       />
       {/* Admin sayfası içeriği */}
-      <Input
+      <InputWithLabel
         id = "e-mail"
         label= "E-posta: "
         type= "text"
@@ -47,7 +51,7 @@ function Log() {
         isFocused   
         onChange={(e) => setEmail(e.target.value)}
       />
-      <Input
+      <InputWithLabel
         id = "password"
         label= "Şifre: "
         type= "password"
