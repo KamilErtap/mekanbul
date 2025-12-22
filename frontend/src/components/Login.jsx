@@ -9,12 +9,9 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = async () => {
-        if (loading) return;
-        setLoading(true);
             if (!email || !password) {
                 alert("Tüm alanlar gerekli!");
                 return;
@@ -22,10 +19,11 @@ function Login() {
     
             try {
                 const response = await UserDataService.login({ email, password });
+                const user = response.data.user;
                 // Token localStorage’a kaydedilebilir
                 localStorage.setItem("token", response.data.token);
                 alert("Giriş başarılı!");
-                if (response.data.user.role === "admin") {
+                if (user?.role === "admin") {
                     navigate("/admin"); // Admin paneline yönlendir
                 }else { 
                 navigate("/");
@@ -34,7 +32,7 @@ function Login() {
                 console.error(err);
                 alert(err.response?.data?.status || "Giriş başarısız!");
             }
-    };
+        };
 
     return (
         <div>
@@ -42,7 +40,7 @@ function Login() {
             <h1>Giriş Yap</h1>
             <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />   
-            <button onClick={handleLogin} disabled={loading}>Giriş Yap</button>
+            <button onClick={handleLogin}>Giriş Yap</button>
             <p>Hesabınız yok mu? Kayıt olun.</p> <Link to="/signup">Kayıt Ol</Link>
         </div>
     );
