@@ -17,7 +17,7 @@ function Signup() {
         }
 
         try {
-            const response = await UserDataService.signup({ name:name, email:email, password:password });
+            const response = await UserDataService.signup({ name, email, password });
             // Token localStorage’a kaydedilebilir
             localStorage.setItem("token", response.data.token);
             alert("Kayıt başarılı!");
