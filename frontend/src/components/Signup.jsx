@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
-import api from "../api/http-common";
+import UserDataService from "../services/UserDataService";
 
 function Signup() {
   const navigate = useNavigate();
@@ -13,17 +13,10 @@ function Signup() {
 
   const handleSignup = async () => {
     try {
-      const response = await api.post("/signup",
-        {
-          name,
-          email,
-          password,
-        },
-        {
-            headers: {
-                "Content-Type": "application/json",
-            }
-        }
+      const response = await UserDataService.signup(
+        name,
+        email,
+        password
       );
 
       localStorage.setItem("token", response.data.token);
