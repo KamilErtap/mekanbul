@@ -9,9 +9,12 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = async () => {
+        if (loading) return;
+        setLoading(true);
             if (!email || !password) {
                 alert("Tüm alanlar gerekli!");
                 return;
@@ -31,7 +34,7 @@ function Login() {
                 console.error(err);
                 alert(err.response?.data?.status || "Giriş başarısız!");
             }
-        };
+    };
 
     return (
         <div>
@@ -39,7 +42,7 @@ function Login() {
             <h1>Giriş Yap</h1>
             <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />   
-            <button onClick={handleLogin}>Giriş Yap</button>
+            <button onClick={handleLogin} disabled={loading}>Giriş Yap</button>
             <p>Hesabınız yok mu? Kayıt olun.</p> <Link to="/signup">Kayıt Ol</Link>
         </div>
     );
