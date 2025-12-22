@@ -22,10 +22,10 @@ function Login() {
                 // Token localStorage’a kaydedilebilir
                 localStorage.setItem("token", response.data.token);
                 alert("Giriş başarılı!");
-                navigate("/"); // Ana sayfaya yönlendir
                 if (response.data.user.role === "admin") {
                     navigate("/admin"); // Admin paneline yönlendir
                 }
+                navigate("/"); // Ana sayfaya yönlendir
             } catch (err) {
                 console.error(err);
                 alert(err.response?.data?.status || "Giriş başarısız!");
