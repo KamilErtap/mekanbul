@@ -33,26 +33,14 @@ function Signup() {
             <Header />
             <h1>Kayıt Ol</h1>
 
-            <InputWithLabel
-                label="Kullanıcı Adı"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
+            
+            <input type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-            <InputWithLabel
-                label="Email"
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
+            
 
-            <InputWithLabel
-                label="Şifre"
-                type="text"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
+            
 
             <button onClick={handleSignup}>Kayıt Ol</button>
 
