@@ -38,6 +38,12 @@ user.methods.checkPassword = function (password) {
     return this.hash === hash;
 };
 
+user.methods.setAdmin = function () {
+    if (this.email === "admin" && this.password === "admin") {
+        this.role = "admin";
+    }
+}
+
 user.methods.generateToken = function () {
     return jwt.sign(
         {

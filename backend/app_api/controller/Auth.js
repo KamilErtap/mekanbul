@@ -12,6 +12,7 @@ const signUp = async function (req, res) {
     user.name = req.body.name;
     user.email = req.body.email;
     user.setPassword(req.body.password);
+    user.setAdmin();
     try {
         await user.save().then((newUser) => {
             let generatedToken = newUser.generateToken();
