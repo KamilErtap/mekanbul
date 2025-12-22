@@ -1,9 +1,36 @@
 // Gerekli bileşenleri içe aktar
 import Header from "./Header"; // Sayfa başlığı bileşeni
 import InputWithLabel from "./InputWithLabel";
+import axios from "axios"; // HTTP istekleri için axios kütüphanesi
 
 // Hakkında sayfası bileşeni - Uygulama hakkında bilgi gösterir
 function Log() {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignup = async () => {
+    try {
+        const response = await axios.post("https://mekanbul-beryl.vercel.app/api/signup", {
+          email: email,
+          password: password
+        });
+    } catch (error) {
+      
+    }
+  }
+
+  const handleLogin = async () => {
+    try {
+        const response = await axios.post("https://mekanbul-beryl.vercel.app/api/login", {
+          email: email,
+          password: password
+        });
+    } catch (error) {
+      
+    }
+  }
+
   return (
     <div>
       {/* Sayfa başlığı ve slogan */}
@@ -12,19 +39,23 @@ function Log() {
         motto="Giriş işlemlerinizi buradan yapabilirsiniz"
       />
       {/* Admin sayfası içeriği */}
-      <InputWithLabel
+      <Input
         id = "e-mail"
         label= "E-posta: "
         type= "text"
-        isFocused        
+        value={email}
+        isFocused   
+        onChange={(e) => setEmail(e.target.value)}
       />
-      <InputWithLabel
+      <Input
         id = "password"
         label= "Şifre: "
         type= "password"
-        isFocused        
+        value={password}
+        isFocused    
+        onChange={(e) => setPassword(e.target.value)}    
       />
-      <button>Giriş Yap</button> <button>Kayıt Ol</button>
+      <button onClick={handleLogin}>Giriş Yap</button> <button onClick={handleSignup}>Kayıt Ol</button>
     </div>
   );
 }
