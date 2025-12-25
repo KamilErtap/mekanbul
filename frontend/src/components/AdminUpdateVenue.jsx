@@ -73,14 +73,22 @@ function AdminUpdateVenue() {
   return (
     <form onSubmit={handleSubmit}>
       <input name="name" value={form.name} onChange={handleChange} />
+      <p></p>
       <input name="address" value={form.address} onChange={handleChange} />
+      <p></p>
       <input name="foodanddrink" value={form.foodanddrink} onChange={handleChange} />
+      <p></p>
       <input name="lat" value={form.lat} onChange={handleChange} />
+      <p></p>
       <input name="long" value={form.long} onChange={handleChange} />
+      <p></p>
 
       <input name="days1" value={form.days1} onChange={handleChange} />
+      <p></p>
       <input name="open1" value={form.open1} onChange={handleChange} />
+      <p></p>
       <input name="close1" value={form.close1} onChange={handleChange} />
+      <p></p>
       <label>
         Kapalı mı?
         <input
@@ -90,10 +98,14 @@ function AdminUpdateVenue() {
           onChange={handleChange}
         />
       </label>
+      <p></p>
 
       <input name="days2" value={form.days2} onChange={handleChange} />
+      <p></p>
       <input name="open2" value={form.open2} onChange={handleChange} />
+      <p></p>
       <input name="close2" value={form.close2} onChange={handleChange} />
+      <p></p>
       <label>
         Kapalı mı?
         <input
@@ -103,6 +115,7 @@ function AdminUpdateVenue() {
           onChange={handleChange}
         />
       </label>
+      <p></p>
 
       <button type="submit">Venue Güncelle</button>
     </form>

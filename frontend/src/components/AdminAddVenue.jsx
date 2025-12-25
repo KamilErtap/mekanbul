@@ -44,27 +44,38 @@ function AdminAddVenue() {
   return (
     <form onSubmit={handleSubmit}>
       <input name="name" placeholder="Name" onChange={handleChange} />
+      <p></p>
       <input name="address" placeholder="Address" onChange={handleChange} />
+      <p></p>
       <input name="foodanddrink" placeholder="Food/Drink" onChange={handleChange} />
+      <p></p>
       <input name="lat" placeholder="Lat" onChange={handleChange} />
+      <p></p>
       <input name="long" placeholder="Long" onChange={handleChange} />
+      <p></p>
 
       <input name="days1" placeholder="Days 1" onChange={handleChange} />
+      <p></p>
       <input name="open1" placeholder="Open 1" onChange={handleChange} />
+      <p></p>
       <input name="close1" placeholder="Close 1" onChange={handleChange} />
+      <p></p>
       <label>
         Kapalı mı?
         <input type="checkbox" name="isClosed1" onChange={handleChange} />
       </label>
-
+      <p></p>
       <input name="days2" placeholder="Days 2" onChange={handleChange} />
+      <p></p>
       <input name="open2" placeholder="Open 2" onChange={handleChange} />
+      <p></p>
       <input name="close2" placeholder="Close 2" onChange={handleChange} />
+      <p></p>
       <label>
         Kapalı mı?
         <input type="checkbox" name="isClosed2" onChange={handleChange} />
       </label>
-
+      <p></p>
       <button type="submit">Venue Ekle</button>
     </form>
   );

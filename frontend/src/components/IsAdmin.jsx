@@ -11,6 +11,7 @@ function IsAdmin({id}) {
         return (
         <div>
         <button onClick={() =>VenueDataService.deleteVenue(id).then(() => window.location.reload())}>Mekan Sil</button>
+        <p></p>
         <AdminUpdateVenue />
         </div>
         );

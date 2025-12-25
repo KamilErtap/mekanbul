@@ -33,8 +33,11 @@ function Signup() {
             <h1>Kayıt Ol</h1>
            
             <input type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <p></p>
             <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />          
+            <p></p>
+            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <p></p>          
 
             <button onClick={handleSignup}>Kayıt Ol</button>
 
