@@ -147,11 +147,12 @@ const Admin = () => {
       ) : (
         isSuccess && (
           <div className="row">
-          <p></p>
-          <AdminAddVenue />
+          
           <p></p>
           {/* Filtrelenmiş mekanları listele */}
           <VenueList venues={filteredVenues} />
+          <p></p>
+          <AdminAddVenue />
           </div>
           
         )
