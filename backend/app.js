@@ -16,7 +16,7 @@ app.use(passport.initialize());
 var allowCrossDomain = function(req,res,next){
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Hearders','Content-Type, Authorization');
+    res.header('Access-Control-Allow-Headers','Content-Type, Authorization');
     next();
 };
 app.use((err, req, res, next) => {

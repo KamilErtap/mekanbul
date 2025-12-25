@@ -4,7 +4,6 @@ class UserDataService {
   // Yeni kullanıcı kaydı oluşturma
   // data: { name, email, password }
   signup(data) {
-   
     return http.post("/signup", data);
   }
 

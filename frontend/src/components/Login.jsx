@@ -3,7 +3,7 @@ import InputWithLabel from "./InputWithLabel";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserDataService from "../services/UserDataService"; // Axios service
+import UserDataService from "../services/UserDataService"; 
 import {jwtDecode} from "jwt-decode";
 
 function Login() {
@@ -22,15 +22,15 @@ function Login() {
                 const response = await UserDataService.login({ email, password });
                 const token = response.data.token;
                 const user = jwtDecode(token);
-                // Token localStorage’a kaydedilebilir
+
                 localStorage.setItem("token", token);
                 alert("Giriş başarılı!");
                 console.log("Giriş yapan kullanıcı:", user.role);
                 if (user.role === "admin") {
-                    navigate("/admin"); // Admin paneline yönlendir
+                    navigate("/admin"); 
                 }else { 
                 navigate("/");
-                } // Ana sayfaya yönlendir
+                } 
             } catch (err) {
                 console.error(err);
                 alert(err.response?.data?.status || "Giriş başarısız!");

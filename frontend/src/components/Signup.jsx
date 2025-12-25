@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import InputWithLabel from "./InputWithLabel";
 import Header from "./Header";
-import UserDataService from "../services/UserDataService"; // Axios service
+import UserDataService from "../services/UserDataService"; 
 
 function Signup() {
     const [name, setName] = useState("");
@@ -18,10 +18,9 @@ function Signup() {
 
         try {
             const response = await UserDataService.signup({ name, email, password });
-            // Token localStorage’a kaydedilebilir
             localStorage.setItem("token", response.data.token);
             alert("Kayıt başarılı!");
-            navigate("/login"); // Ana sayfaya yönlendir
+            navigate("/login"); 
         } catch (err) {
             console.error(err);
             alert(err.response?.data?.status || "Kayıt başarısız!");

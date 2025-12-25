@@ -11,12 +11,24 @@ class VenueDataService {
   nearbyVenues(lat, long) {
     return http.get(`/venues?lat=${lat}&long=${long}`);
   }
+
+  getAllVenues(maxdistance) {
+    return http.get(`/admin/venues`);
+  }
   
   // Belirli bir mekanı ID'ye göre getir
   // id: Mekan ID'si
   // Örnek: getVenue(123) -> /venues/123
   getVenue(id) {
     return http.get(`venues/${id}`);
+  }
+
+  deleteVenue(id) {
+    return http.delete(`venues/${id}`);
+  }
+
+  updateVenue(id, data) {
+    return http.put(`venues/${id}`, data);
   }
 
   // Yeni mekan ekle - Kimlik doğrulama gerektirir

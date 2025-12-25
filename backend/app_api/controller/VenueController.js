@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var Venue = mongoose.model("venue");
+const passport = require("passport");
+const User = mongoose.model("user");
 
 const createResponse = function (res, status, content) {
     res.status(status).json(content);
@@ -24,7 +26,7 @@ const listVenues = function (req, res) {
     var point = { type: "Point", coordinates: [lat, long] };
     var geoOptions = {
         distanceField: "distance", spherical: true,
-        maxDistance: converter.radian2Kilometer(100)
+        maxDistance: converter.radian2Kilometer(100)  
     };
     try {
         Venue.aggregate([
@@ -53,6 +55,40 @@ const listVenues = function (req, res) {
     }
 };
 
+const adminListVenues = function (req, res) {
+    var lat = parseFloat(req.query.lat) || 0;
+    var long = parseFloat(req.query.long) || 0;
+    var point = { type: "Point", coordinates: [lat, long] };
+    var geoOptions = {
+        distanceField: "distance", spherical: true,
+        minDistance: converter.radian2Kilometer(0),
+    };
+    try {
+        Venue.aggregate([
+            {
+                $geoNear: {
+                    near: point, ...geoOptions,
+                }
+            }]).then((result) => {
+                const venues = result.map(function (venue) {
+                    return {
+                        distance: converter.kilometer2Radian(venue.distance),
+                        name: venue.name,
+                        address: venue.address,
+                        rating: venue.rating,
+                        foodanddrink: venue.foodanddrink,
+                        id: venue._id,
+                    };
+                });
+                if (venues.length > 0)
+                    createResponse(res, "200", venues);
+                else
+                    createResponse(res, "200", [] /*{ "status": "Civarda mekan yok" }*/ );
+            })
+    } catch (error) {
+        createResponse(res, "404", error);
+    }
+};
 const addVenue = async function (req, res) {
     try {
         await Venue.create({
@@ -140,5 +176,6 @@ module.exports = {
     addVenue,
     getVenue,
     updateVenue,
-    deleteVenue
+    deleteVenue,
+    adminListVenues,
 }

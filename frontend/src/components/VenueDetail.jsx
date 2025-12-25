@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom"; // URL parametrelerini almak için
 import venuesData from "../data/venues.json"; // Mekan verileri (JSON dosyasından)
 import { useSelector,useDispatch } from "react-redux";
 import VenueDataService from "../services/VenueDataService";
+import IsAdmin from "./IsAdmin";
 
 // Mekan detay sayfası bileşeni - Seçilen mekanın tüm bilgilerini gösterir
 const VenueDetail = () => {
@@ -22,7 +23,7 @@ const VenueDetail = () => {
   // Bu sayede veriler tek bir yerde tutulur ve değişiklikler kolaylaşır
   // Normalde bu veriler API'den veya Redux store'dan gelecek
   const allVenues = venuesData;
-  
+
   // URL'den gelen id'ye göre mekanı bul
   // id string olarak gelir, bu yüzden Number() ile sayıya çeviriyoruz
   //const venue = allVenues.find(v => v.id === Number(id)) || allVenues[0];
@@ -46,7 +47,7 @@ const VenueDetail = () => {
     <div>
       {/* Sayfa başlığı - Mekan adını göster */}
       <Header headerText={venue.name} />
-      
+      <IsAdmin id={id} />
       {/* Bootstrap container - İçeriği ortalar ve genişliği sınırlar */}
       <div className="container">
         {/* Bootstrap row - Yatay satır oluşturur */}

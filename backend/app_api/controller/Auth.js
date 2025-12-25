@@ -35,4 +35,5 @@ const login = async function (req, res) {
         }
     })(req, res);
 };
+
 module.exports = {signUp, login};

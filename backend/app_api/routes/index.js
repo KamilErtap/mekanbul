@@ -15,6 +15,10 @@ router.post(`/signup`, ctrlAuth.signUp);
 router.post(`/login`, ctrlAuth.login);
 
 router
+.route("/admin/venues")
+.get(venueController.adminListVenues);
+
+router
 .route("/venues")
 .get(venueController.listVenues)
 .post(venueController.addVenue);
