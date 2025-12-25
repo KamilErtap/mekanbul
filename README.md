@@ -1,4 +1,21 @@
-https://mekanbul-17py.vercel.app
+VercelFrontend: https://mekanbul-azya.vercel.app <br/>
+VercelBackend: https://mekanbul-beryl.vercel.app
+----------------------------------------
+Admin girişi için: email:admin şifre:admin
+----------------------------------------
+SON ÖDEV İÇERİĞİ İÇİN EKLENENLER:
+
+frontend/src/components <br/>
+  &nbsp;&nbsp;&nbsp;Admin paneli -> Admin.jsx <br/>
+  &nbsp;&nbsp;&nbsp;Login sayfası -> Login.jsx <br/>
+  &nbsp;&nbsp;&nbsp;Signup sayfası -> Signup.jsx <br/>
+  &nbsp;&nbsp;&nbsp;Admin mekan ekleme komutu -> AdminAddVenue.jsx <br/>
+  &nbsp;&nbsp;&nbsp;Admin mekan güncelleme komutu -> AdminUpdateVenue.jsx <br/>
+  &nbsp;&nbsp;&nbsp;Admin mekan silme ve güncelleme kontrolü -> IsAdmin.jsx <br/>
+
+frontend/services <br/>
+  &nbsp;&nbsp;&nbsp;Login ve signup için requestler -> UserDataService.jsx
+
 <img width="1385" height="878" alt="UpdateComment" src="https://github.com/user-attachments/assets/5fecd3e0-f6a1-49c6-892a-1b9b0ceb6541" />
 <img width="1386" height="927" alt="ListNearbyVenues" src="https://github.com/user-attachments/assets/24c2eac2-ca61-4197-bf64-d3b0af2c30a3" />
 <img width="1383" height="926" alt="GetVenue" src="https://github.com/user-attachments/assets/fa30c214-dfb6-461e-8dd9-f074dbc03fdf" />
