@@ -42,8 +42,11 @@ function Login() {
             <Header />
             <h1>Giriş Yap</h1>
             <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />   
+            <p></p>
+            <input type="text" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /> 
+            <p></p>
             <button onClick={handleLogin}>Giriş Yap</button>
+            <p></p>
             <p>Hesabınız yok mu? Kayıt olun.</p> <Link to="/signup">Kayıt Ol</Link>
         </div>
     );

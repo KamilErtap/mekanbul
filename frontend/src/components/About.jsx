@@ -12,7 +12,7 @@ function About() {
         motto="ReactJS Single Page Application (SPA)"
       />
       <p>
-        Ben yaptim
+        Ben yaptim sayılır.
       </p>
 
       <img src={benFoto} width={200} height={200} alt="literly me"></img>
